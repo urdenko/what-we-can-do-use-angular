@@ -1,0 +1,7 @@
+/* задать стилевые правила для <my-cool-app-root></my-cool-app-root> */
+:host {
+  display: block; // по-умолчанию любой неспецифичный элемент будет со свойством inline
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+}
