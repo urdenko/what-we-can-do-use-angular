@@ -1,0 +1,50 @@
+$inputXpadding: 5px;
+$borderWidth: 1px;
+$inputLineHeight: 2rem;
+$labelLineHeight: 1.5rem;
+
+:host {
+  display: block;
+  /* ширина компоненты, задавать ее таким образом неверно */
+  // height: calc(#{$inputLineHeight} + (2 * #{$borderWidth}) + #{$labelLineHeight});
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0 $inputXpadding;
+  border: $borderWidth solid #999;
+  line-height: 2rem; // как красивше задать ширину поля
+}
+
+label {
+  padding-left: $inputXpadding + $borderWidth;
+  line-height: $labelLineHeight;
+  display: block; // исключаем из верстки блока vertical-align;
+}
+
+/* Выкладываем в одном месте все стилевые правила под разные контексты  */
+
+:host-context(my-cool-app-post-form) {
+  /* правила в контексте формы ввода */
+  label {
+    color: green;
+  }
+
+  input {
+    border-color: green;
+    color: green;
+  }
+}
+
+/* правила в контексте класса родительского элемента */
+:host-context(.purple-field) {
+  label {
+    color: purple;
+  }
+
+  input {
+    border-color: purple;
+    color: purple;
+  }
+}

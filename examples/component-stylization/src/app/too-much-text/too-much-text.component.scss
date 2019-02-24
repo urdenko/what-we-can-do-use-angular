@@ -1,0 +1,8 @@
+.hiding-btn {
+  /* можно задать те правила, что не относятся к внутренней верстке компоненты  */
+  margin: 20px 0;
+}
+
+:host-context(my-cool-app-left-sidebar) {
+  color: darkslategrey;
+}

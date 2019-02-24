@@ -1,0 +1,38 @@
+:host {
+  display: block; // никаких сюрпризов не ждем
+  min-width: 100px;
+  border: 1px solid #999;
+  padding: 5px 10px;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Выкладываем в одном месте все стилевые правила под разные контексты  */
+
+/* правила в контексте левого сайдбара */
+:host-context(my-cool-app-left-sidebar) {
+  background-color: green;
+  color: white;
+  border: 1px solid white;
+}
+
+/* првила в контексте фомы сохранения */
+:host-context(my-cool-app-post-form) {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+/* првила в контексте класса отмены */
+:host-context(.cancel) {
+  background-color: coral;
+  border-color: coral;
+  color: brown;
+}
+
+/* првила в контексте класса отмены, но с корректировкой под компоненту */
+:host-context(my-cool-app-left-sidebar .cancel) {
+  background-color: brown;
+  border-color: white;
+  color: white;
+}

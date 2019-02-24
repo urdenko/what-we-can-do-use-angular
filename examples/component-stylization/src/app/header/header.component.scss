@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+/* задаем общие правила */
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: inherit;
+  font-weight: 600;
+}
+
+:host-context(my-cool-app-left-sidebar) {
+  h1 {
+    color: brown;
+  }
+}
+
+:host-context(my-cool-app-post-form) {
+  h1 {
+    color: goldenrod;
+  }
+}

@@ -1,0 +1,75 @@
+<my-cool-app-button *ngIf="!isShowText" class="hiding-btn" (click)="onToggleText()" label="Показать"></my-cool-app-button>
+<div class="">
+  <my-cool-app-button
+    *ngIf="isShowText"
+    class="hiding-btn {{ ButtonclassContext.cancel }}"
+    (click)="onToggleText()"
+    label="Скрыть"
+  ></my-cool-app-button>
+</div>
+<ng-template [ngIf]="isShowText">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ex varius, eleifend nibh vel, mollis orci. Aliquam eu turpis
+  facilisis, lacinia risus id, hendrerit quam. Vestibulum eget commodo libero. Sed eget fringilla lorem. Donec sed tortor nec justo molestie
+  consectetur. Quisque a vehicula odio, eget ullamcorper purus. Etiam metus dui, tempus eu tincidunt non, rutrum quis diam. Proin iaculis
+  bibendum metus, sed volutpat neque venenatis eget. Quisque vitae enim sed ipsum lobortis varius ac id justo. Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit. Cras sollicitudin nulla eu congue tempus. Integer eu purus quis sem varius gravida. Vivamus lobortis, dolor
+  vitae interdum vehicula, enim est malesuada risus, vel varius metus eros nec nunc. Mauris eget arcu quis dolor egestas dapibus. Proin et
+  ante egestas, pellentesque ex malesuada, maximus leo. Etiam sed lacus vel massa facilisis varius. In eget dui in ante facilisis venenatis
+  quis quis lectus. Curabitur feugiat feugiat dolor, sed lacinia arcu porttitor eget. Nunc elementum velit non quam volutpat iaculis. Nunc
+  dignissim id mi sit amet facilisis. Vivamus eget mauris turpis. Integer iaculis dapibus odio nec malesuada. Curabitur semper at quam a
+  molestie. Quisque ornare nec nunc euismod posuere. Morbi magna risus, fermentum vel ante ut, fringilla efficitur lectus. Vivamus urna
+  nunc, fermentum nec nisl id, imperdiet semper massa. Praesent sed nibh quis nisl tempor mattis. Donec facilisis faucibus purus a semper.
+  Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean mi arcu, sollicitudin sit amet nulla eu, semper condimentum orci. Nam
+  eu neque orci. Proin sagittis sem a tortor dignissim, et congue purus fringilla. Nullam gravida vulputate aliquam. Nulla luctus tempor
+  augue, in lobortis ligula gravida vel. Nunc non odio at massa porttitor accumsan ac eget diam. Proin laoreet dui massa, sit amet mollis
+  sapien finibus non. Nullam in dignissim tortor. Donec at euismod leo, eu cursus sem. Duis aliquam suscipit nisl. Praesent dapibus eros
+  metus, eget hendrerit eros fermentum a. Donec et magna in orci ornare iaculis. Proin tristique, tortor at rhoncus vestibulum, purus neque
+  feugiat dui, ut cursus tortor purus eget lectus. Pellentesque dui purus, tincidunt a condimentum ac, pretium id nibh. Praesent bibendum
+  risus et ligula suscipit, eget viverra nunc convallis. Praesent a luctus nisi. Curabitur pellentesque rhoncus quam a rhoncus. Vestibulum
+  gravida sagittis enim eu imperdiet. Proin pharetra risus fermentum accumsan porta. Phasellus vitae mattis nisi. Pellentesque sem ex,
+  aliquam et ante eget, sollicitudin eleifend neque. Pellentesque facilisis libero nec facilisis congue. Fusce aliquet lacus augue, vel
+  porta erat hendrerit vulputate. Donec accumsan vitae neque a aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+  per inceptos himenaeos. Donec eget ex tristique, laoreet urna at, luctus erat. Etiam a gravida tortor. Phasellus at est est. Nam mattis
+  finibus lorem, a elementum est vehicula non. Aenean eleifend tortor sed ornare ornare. Curabitur in ante nulla. Fusce eget diam fermentum
+  sapien fermentum placerat id eget dui. Aliquam facilisis volutpat luctus. Etiam a aliquet libero, quis tempus ipsum. Aenean feugiat, magna
+  eu ornare ultricies, turpis mi scelerisque neque, at vestibulum arcu metus sed neque. Donec et lacus diam. Orci varius natoque penatibus
+  et magnis dis parturient montes, nascetur ridiculus mus. Curabitur consectetur ligula et convallis efficitur. Cras id facilisis orci.
+  Maecenas volutpat, diam eget tempus ultrices, dolor eros tincidunt turpis, non consequat dolor arcu ut magna. In luctus, turpis quis
+  ullamcorper dictum, ante nulla eleifend erat, egestas congue ligula urna in nulla. Cras sed ante nisi. Proin suscipit, nisi quis pulvinar
+  pharetra, justo orci ultricies ante, non luctus lorem lacus nec nunc. Donec purus lorem, bibendum auctor massa quis, condimentum venenatis
+  purus. Phasellus ac posuere erat. Ut semper faucibus molestie. Duis egestas sed augue quis dignissim. Donec fringilla ornare ante eu
+  volutpat. Sed ante elit, aliquet id neque quis, congue condimentum sapien. Vivamus vulputate, risus id maximus rhoncus, turpis turpis
+  sollicitudin justo, sed consectetur augue nisl vitae urna. Etiam eget urna in metus auctor lacinia lobortis nec justo. Duis auctor, mauris
+  at convallis hendrerit, velit nunc consequat augue, venenatis laoreet sapien erat non lorem. Suspendisse maximus, tortor id bibendum
+  consectetur, dui libero pulvinar justo, quis accumsan felis lorem et lacus. Morbi ligula est, laoreet vel laoreet quis, malesuada vel
+  magna. Morbi orci velit, dapibus sed volutpat nec, condimentum ut neque. Vivamus volutpat accumsan ante vehicula cursus. Sed lobortis
+  scelerisque felis eget euismod. Praesent at odio pharetra, gravida magna et, euismod nibh. Aliquam pretium, quam eget sollicitudin
+  maximus, nisl ipsum posuere tortor, a scelerisque erat tortor sed mauris. Sed gravida, ligula luctus ornare semper, elit massa congue
+  lectus, nec pharetra neque mauris ac sem. Praesent vel luctus nunc. Pellentesque euismod velit purus, vel feugiat augue mollis non. Nunc
+  at erat maximus, sollicitudin ex vitae, sagittis magna. Integer euismod tortor id mollis venenatis. Nunc erat lorem, condimentum id
+  posuere sed, elementum at elit. Donec finibus lobortis dignissim. Etiam justo neque, aliquam eget ultricies a, fermentum at lorem. Ut
+  rutrum felis dolor, quis viverra felis vestibulum in. Maecenas vehicula quam sit amet augue porttitor, sit amet viverra nisi commodo. Sed
+  feugiat mauris in risus laoreet, a rhoncus eros laoreet. In et sem vitae dui ornare pretium. Praesent et mauris massa. Cras at sodales
+  nisi. Sed vel purus molestie, hendrerit metus id, rhoncus nunc. Maecenas a condimentum tellus. Pellentesque dapibus libero vel lectus
+  consectetur aliquam. Vestibulum eu turpis et nibh euismod rutrum ac non ipsum. Nam in massa gravida, congue leo a, varius tortor. Proin
+  vestibulum tempus libero, sed bibendum magna egestas in. In id ipsum neque. Vestibulum aliquet nisi lorem, vitae molestie quam malesuada
+  quis. Aliquam at mollis odio, vel condimentum leo. Ut fringilla euismod fringilla. Proin posuere volutpat arcu, vitae dapibus dui congue
+  efficitur. Aliquam est est, cursus quis velit in, efficitur rhoncus neque. Duis placerat suscipit elit, sit amet mattis enim fringilla id.
+  Aenean euismod nec quam in ultricies. Pellentesque sagittis purus leo, a rutrum tellus vulputate eget. Nulla dignissim commodo eros, quis
+  tristique velit vehicula a. Sed a tristique neque. Suspendisse sit amet sem ac magna suscipit fermentum ac id arcu. Vivamus eleifend lacus
+  eget eleifend dictum. In porttitor fringilla orci hendrerit consequat. Sed mattis velit a tempor lacinia. Sed nunc ipsum, placerat at
+  neque ut, pretium bibendum nisl. Praesent euismod risus at nisi sagittis, id consectetur arcu semper. Maecenas et dolor felis. Aliquam
+  feugiat turpis lorem, et venenatis orci lobortis eget. Proin nec lectus ac libero accumsan ornare. Phasellus blandit gravida sem ac
+  imperdiet. Proin euismod volutpat ex, vel molestie dui porttitor in. Vivamus magna nisl, accumsan id imperdiet eu, tempus eu sem.
+  Phasellus efficitur eros nec posuere rutrum. Nunc at rutrum nunc, vel placerat sem. Nullam bibendum metus tempor, ultrices purus non,
+  ornare nisi. Nam in sollicitudin mi, et vestibulum turpis. Nullam malesuada nisi at purus posuere pellentesque. Morbi ac tristique urna,
+  tristique tincidunt massa. Curabitur ut libero vitae nibh luctus mollis in eu nunc. Fusce ex elit, pretium tempus euismod vel, convallis
+  ut augue. Morbi aliquam placerat libero, eget consectetur sem. Donec tempor turpis sed convallis maximus. Mauris ultricies justo a quam
+  interdum blandit. Fusce varius, quam molestie consequat cursus, odio nibh imperdiet sapien, non vestibulum diam dui id sapien. Donec a
+  purus eget velit posuere imperdiet. Maecenas dictum et tellus a malesuada. Maecenas ac lobortis tellus, ut euismod erat. Ut eget magna et
+  nulla placerat scelerisque. Nam at viverra arcu, eget pretium tellus. Etiam consequat tellus nisi, in pellentesque metus feugiat at. Nunc
+  tincidunt vitae justo ac accumsan. Proin sed ipsum nunc. Pellentesque luctus efficitur ultrices. Nulla ut lectus a leo iaculis
+  sollicitudin lacinia quis nibh. Aenean sed ligula eu sapien vestibulum dignissim. Maecenas ac nulla egestas, volutpat mauris eget, lacinia
+  lectus. Nulla facilisi. Sed imperdiet mollis neque at fringilla. Nullam gravida sapien a imperdiet laoreet. Ut auctor mattis magna, a
+  pretium mauris ultrices a
+</ng-template>

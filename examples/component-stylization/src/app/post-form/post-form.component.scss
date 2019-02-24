@@ -1,0 +1,39 @@
+/* задаем количество столбцов */
+$cols: 5;
+
+:host {
+  background-color: beige;
+  height: 100%;
+  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-gap: 20px 40px;
+  align-content: start;
+}
+
+/* задаем вариации поглощения правых ячеек */
+@for $i from 1 through $cols {
+  .cols-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+/* для удобства задем ячейку, которая поглашает все ячейки справа */
+.cols-all {
+  @extend .cols-#{$cols};
+}
+
+.to-right {
+  justify-self: end;
+}
+
+.to-center {
+  justify-self: center;
+}
+
+.cancel-area {
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
