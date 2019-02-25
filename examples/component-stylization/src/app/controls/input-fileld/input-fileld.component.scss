@@ -14,7 +14,7 @@ input {
   width: 100%;
   padding: 0 $inputXpadding;
   border: $borderWidth solid #999;
-  line-height: 2rem; // как красивше задать ширину поля
+  line-height: $inputLineHeight; // как красивше задать ширину поля
 }
 
 label {
@@ -46,7 +46,7 @@ label {
 
 /* 
  * Здесь написано примерно так:
- * Отобразить обязательное поле в контексте компоненты my-cool-app-post-form со следующими правилами 
+ * Отобразить обязательное поле в компоненте my-cool-app-post-form со следующими правилами 
  */
 :host-context(my-cool-app-post-form)[useas="required"] {
   label {

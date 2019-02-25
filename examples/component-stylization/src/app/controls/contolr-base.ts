@@ -1,13 +1,13 @@
 import { Input, HostBinding } from "@angular/core";
-import { UseControlAs } from "./use-control-as.enum";
+import { UseElementAs } from "./custom-contexts.enum";
 
 /** базовый класс контролов */
 export class BaseControl {
   /**
-   * Принимает назначение контрола и прикрепляем к хост-элементу как атрибут useas
+   * Принимаем контексты и прикрепляем их к хост-элементу как атрибуты
    * Если назначение не указано, то атрибут не появляется
    */
   @HostBinding("attr.useas")
   @Input()
-  useControlAs: UseControlAs;
+  protected useElementAs: UseElementAs;
 }

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { UseControlAs } from "../controls/use-control-as.enum";
+import { UseElementAs } from "../controls/custom-contexts.enum";
 
 @Component({
   selector: "my-cool-app-post-form",
@@ -7,5 +7,5 @@ import { UseControlAs } from "../controls/use-control-as.enum";
   styleUrls: ["./post-form.component.scss"]
 })
 export class PostFormComponent {
-  UseControlAs = UseControlAs;
+  UseElementAs = UseElementAs;
 }

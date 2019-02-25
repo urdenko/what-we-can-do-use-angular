@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { UseControlAs } from "../controls/use-control-as.enum";
+import { UseElementAs } from "../controls/custom-contexts.enum";
 
 @Component({
   selector: "my-cool-app-too-much-text",
@@ -7,7 +7,7 @@ import { UseControlAs } from "../controls/use-control-as.enum";
   styleUrls: ["./too-much-text.component.scss"]
 })
 export class TooMuchTextComponent {
-  UseControlAs = UseControlAs;
+  UseElementAs = UseElementAs;
   isShowText: boolean;
 
   onToggleText(): void {
