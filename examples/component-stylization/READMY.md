@@ -17,6 +17,18 @@
   
 ### Guide Path
 
-| Путь к коду | Описание  |
-| :-------:   | :-------: |
-| angular.json -> projects -> component-stylization -> prefix | Задаем общий префикс к хост-элементам для выделения проекта в монорепозитории |
+| Путь к коду | Описание |
+| ---         | ---      |
+| angular.json - projects - component-stylization - prefix | Задаем общий префикс к хост-элементам для выделения проекта в монорепозитории |
+| src/styles.scss | Задаем глобальные стили. Боремся с самоуправством user agent |
+| Chrome DevTools | Раскрыть механизм инкапсуляции, формирование двух типов аттрибутов компонет, почему из src/styles.scss можно задать правила для всех |
+| src/app/app.component.scss | Демонстрация :host, неявный inline, как работает flex, две строны хост-элемента |
+| src/app/header/header.component.scss | хост-эелемен как block, забираем h1 у user agent, протая демострация :host-context, как он обходит инкапсуляцию |
+| src/app/post-form | Разобрать пример реализации grid секти, как grid избавляет от оберток, какие стили можно вешать на внешней стороне компонент |
+| src/app/controls/input-fileld/input-fileld.component.scss | display: block - мы не ждем vertical-align сюрпризов, формирование ширины контрола, поведение line-height при 1rem |
+| src/app/controls/use-control-as.enum.ts | Подаем идею дополнительных контекстов, осознаем контекст UseElementAs |
+| src/app/controls/contolr-base.ts | Разбираем работу HostBinding, последовательность дектораторов, контекст как атрибут хост-элемента |
+| src/app/controls/input-fileld/input-fileld.component.scss | Разбираем использование контекста UseElementAs |
+| src/app/controls/button/button.component.scss | Разбираем сложный кейс кнопки, комбинируя несколько контекстов |
+| Если осталось время | Показать % как простой хранитель правил, вместо миксинов. Почему общие классы нужно грузить один раз в src/styles.scss. Как добавлять стилевые папки в angular.json, что бы сделать импорт красивым. Коснуться обобщения стилей и assets в монорепозиториях. Как работать с контекстом в монорепозитории, пример, как контекст можно использовать не только для контролов |
+
