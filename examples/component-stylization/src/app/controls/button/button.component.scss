@@ -1,5 +1,5 @@
 :host {
-  display: block; // никаких сюрпризов не ждем
+  display: block; // никаких сюрпризов inline нам не нужно
   min-width: 100px;
   border: 1px solid #999;
   padding: 5px 10px;
@@ -8,7 +8,13 @@
   white-space: nowrap;
 }
 
-/* Выкладываем в одном месте все стилевые правила под разные контексты  */
+/* 
+ * ===============================================
+ * Выкладываем в одном месте все стилевые правила 
+ * под разные контексты компонент 
+ * и под разные контексты использования 
+ * ================================================
+ */
 
 /* правила в контексте левого сайдбара */
 :host-context(my-cool-app-left-sidebar) {
@@ -23,15 +29,18 @@
   color: white;
 }
 
-/* првила в контексте класса отмены */
-:host-context(.cancel) {
+/* првила в контексте назначения "отмена" */
+:host()[useas="cancel"] {
   background-color: coral;
   border-color: coral;
   color: brown;
 }
 
-/* првила в контексте класса отмены, но с корректировкой под компоненту */
-:host-context(my-cool-app-left-sidebar .cancel) {
+/* 
+ * правило в контексте назначения "отмена", 
+ * но с корректировкой под контекст компоненты левого сайдбара 
+ */
+:host-context(my-cool-app-left-sidebar)[useas="cancel"] {
   background-color: brown;
   border-color: white;
   color: white;

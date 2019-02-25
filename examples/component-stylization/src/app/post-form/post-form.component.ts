@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
-import { InputFileldClassContext } from "../controls/input-fileld/input-fileld-class-context.enum";
-import { ButtonclassContext } from "../controls/button/button-class-context.enum";
+import { UseControlAs } from "../controls/use-control-as.enum";
 
 @Component({
   selector: "my-cool-app-post-form",
@@ -8,6 +7,5 @@ import { ButtonclassContext } from "../controls/button/button-class-context.enum
   styleUrls: ["./post-form.component.scss"]
 })
 export class PostFormComponent {
-  InputFileldClassContext = InputFileldClassContext;
-  ButtonclassContext = ButtonclassContext;
+  UseControlAs = UseControlAs;
 }

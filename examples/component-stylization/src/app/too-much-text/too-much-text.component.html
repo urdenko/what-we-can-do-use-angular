@@ -2,7 +2,8 @@
 <div class="">
   <my-cool-app-button
     *ngIf="isShowText"
-    class="hiding-btn {{ ButtonclassContext.cancel }}"
+    [useControlAs]="UseControlAs.cancel"
+    class="hiding-btn"
     (click)="onToggleText()"
     label="Скрыть"
   ></my-cool-app-button>
