@@ -1,0 +1,7 @@
+{
+  "/api.php": {
+    "target": "https://ru.wikipedia.org/w",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
