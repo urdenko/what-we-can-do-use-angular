@@ -6,7 +6,9 @@ import { first } from "rxjs/operators";
 @Component({
   selector: "app-root",
   template: `
-    <app-ngxs></app-ngxs>
+    <app-ngxs-search></app-ngxs-search>
+    <app-ngxs-favorites></app-ngxs-favorites>
+    <app-ngxs-content></app-ngxs-content>
   `,
   styles: []
 })

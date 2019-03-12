@@ -9,3 +9,10 @@ export interface ISearchResult {
     search: ISearchItem[];
   };
 }
+
+export interface IParsePage {
+  parse: {
+    text: { "*": string };
+    title: string;
+  };
+}
