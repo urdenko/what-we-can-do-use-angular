@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { IParsePage } from "../../models/search-result.model";
-import { NgxsState } from "../../stores/ngxs/ngxs.state";
+import { IParsePage } from "../models/search-result.model";
+import { NgxsState } from "../stores/ngxs/ngxs.state";
 import { Select, Actions, ofActionDispatched, ofActionCompleted, ofActionErrored } from "@ngxs/store";
 import { Observable } from "rxjs";
-import { LoadContent } from "../../stores/ngxs/ngxs.actions";
+import { LoadContent } from "../stores/ngxs/ngxs.actions";
 import { HttpErrorResponse } from "@angular/common/http";
 
 @Component({
-  selector: "app-ngxs-content",
+  selector: "app-content",
   template: `
     <div *ngIf="inProgress">Загрузка контента...</div>
     <div *ngIf="errorString">{{ errorString }}</div>
@@ -17,7 +17,7 @@ import { HttpErrorResponse } from "@angular/common/http";
     </ng-template>
   `
 })
-export class NgxsContentComponent implements OnInit {
+export class ContentComponent implements OnInit {
   @Select(NgxsState.content)
   content$: Observable<IParsePage>;
 

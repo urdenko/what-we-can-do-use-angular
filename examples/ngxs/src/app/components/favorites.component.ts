@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
-import { ISearchItem } from "../../models/search-result.model";
-import { NgxsState } from "../../stores/ngxs/ngxs.state";
-import { DeleteFavorite, LoadContent, ClearContent, SelectId } from "../../stores/ngxs/ngxs.actions";
+import { ISearchItem } from "../models/search-result.model";
+import { NgxsState } from "../stores/ngxs/ngxs.state";
+import { DeleteFavorite, LoadContent, ClearContent, SelectId } from "../stores/ngxs/ngxs.actions";
 import { Select, Store } from "@ngxs/store";
 import { Observable } from "rxjs";
 
 @Component({
-  selector: "app-ngxs-favorites",
+  selector: "app-favorites",
   template: `
     Закладки: {{ (favorites$ | async).length }}
     <div
@@ -21,7 +21,7 @@ import { Observable } from "rxjs";
     </div>
   `
 })
-export class NgxsFavoritesComponent {
+export class FavoritesComponent {
   @Select(NgxsState.favorites)
   favorites$: Observable<ISearchItem[]>;
 

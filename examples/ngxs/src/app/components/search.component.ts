@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
-import { ApiService } from "../../services/api.service";
+import { ApiService } from "../services/api.service";
 import { first } from "rxjs/operators";
 import { FormControl } from "@angular/forms";
-import { ISearchItem } from "../../models/search-result.model";
+import { ISearchItem } from "../models/search-result.model";
 import { Store } from "@ngxs/store";
-import { AddFavorite } from "../../stores/ngxs/ngxs.actions";
+import { AddFavorite } from "../stores/ngxs/ngxs.actions";
 
 @Component({
-  selector: "app-ngxs-search",
+  selector: "app-search",
   template: `
     <input [formControl]="inputControl" />
     <button (click)="onSearch()">Поиск</button>
@@ -18,7 +18,7 @@ import { AddFavorite } from "../../stores/ngxs/ngxs.actions";
     </div>
   `
 })
-export class NgxsSearchComponent {
+export class SearchComponent {
   constructor(private api: ApiService, private store: Store) {}
 
   inputControl = new FormControl("");

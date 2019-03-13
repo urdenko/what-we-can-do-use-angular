@@ -4,13 +4,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgxsModule } from "@ngxs/store";
 import { AppComponent } from "./app.component";
-import { NgxsSearchComponent } from "./components/ngxs/ngxs-search.component";
-import { NgxsFavoritesComponent } from "./components/ngxs/ngxs-favorites.component";
-import { NgxsContentComponent } from "./components/ngxs/ngxs-content.component";
+import { SearchComponent } from "./components/search.component";
+import { FavoritesComponent } from "./components/favorites.component";
+import { ContentComponent } from "./components/content.component";
 import { NgxsState } from "./stores/ngxs/ngxs.state";
 
 @NgModule({
-  declarations: [AppComponent, NgxsSearchComponent, NgxsFavoritesComponent, NgxsContentComponent],
+  declarations: [AppComponent, SearchComponent, FavoritesComponent, ContentComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgxsModule.forRoot([NgxsState])],
   providers: [],
   bootstrap: [AppComponent]
