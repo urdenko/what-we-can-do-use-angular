@@ -1,6 +1,6 @@
 import { Component, DoCheck, ViewChild, ElementRef, AfterViewInit, NgZone } from '@angular/core';
 import { range, of, Subject } from 'rxjs';
-import { delay, concatMap, switchMap, tap, takeUntil, startWith, filter } from 'rxjs/operators';
+import { delay, concatMap, switchMap, tap, takeUntil, startWith, filter, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -20,10 +20,14 @@ export class AppComponent implements DoCheck, AfterViewInit {
 
   public fastModeControl = new FormControl(false);
 
-  /** The source of progress percent */
+  /**
+   * The mock source of progress percent.
+   * Added a tenth of a percent for additional calculations
+   */
   public percentProgressBar$ = this.getBack$.asObservable().pipe(
     startWith(0),
-    switchMap(from => range(from, 1000 - from).pipe(concatMap(val => of((val / 10).toFixed(1)).pipe(delay(100))))),
+    map(from => from * 10),
+    switchMap(from => range(from, 1000 - from).pipe(concatMap(val => of(val / 10).pipe(delay(100))))),
     tap(currentPercent => (this.currentPercent = Number(currentPercent)))
   );
 
@@ -63,7 +67,7 @@ export class AppComponent implements DoCheck, AfterViewInit {
       this.ngZone.runOutsideAngular(() => {
         this.percentProgressBar$.pipe(takeUntil(this.fastModeControl.valueChanges)).subscribe(percent => {
           this.performanceProgressBar.nativeElement.style.setProperty('--percent', percent);
-          this.performanceProgressBar.nativeElement.setAttribute('data-percent', `${percent}%`);
+          this.performanceProgressBar.nativeElement.setAttribute('data-percent', `${percent.toFixed(1)}%`);
         });
       });
     });
