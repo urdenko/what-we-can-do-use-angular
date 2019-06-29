@@ -8,7 +8,9 @@
 </section>
 
 <ng-template #beautyCode>
-  <div class="progress-bar" [cssVariable]="{ percent: percentProgressBar$ | async }" (click)="getBack()"></div>
+  <div class="progress-bar" [cssVariable]="{ percent: percentProgressBar$ | async }" (click)="getBack()">
+    {{ percentProgressBar$ | async }}%
+  </div>
 </ng-template>
 
 <ng-template #performanceCode>

@@ -14,7 +14,7 @@ export class AppComponent implements DoCheck, AfterViewInit {
    */
   @ViewChild('performanceProgressBar', { static: false }) performanceProgressBar!: ElementRef;
 
-  private currentPercent = 0;
+  public currentPercent = 0;
 
   private getBack$ = new Subject<number>();
 
@@ -23,8 +23,8 @@ export class AppComponent implements DoCheck, AfterViewInit {
   /** The source of progress percent */
   public percentProgressBar$ = this.getBack$.asObservable().pipe(
     startWith(0),
-    switchMap(from => range(from, 101 - from).pipe(concatMap(val => of(val).pipe(delay(100))))),
-    tap(currentPercent => (this.currentPercent = currentPercent))
+    switchMap(from => range(from, 1000 - from).pipe(concatMap(val => of((val / 10).toFixed(1)).pipe(delay(100))))),
+    tap(currentPercent => (this.currentPercent = Number(currentPercent)))
   );
 
   constructor(private ngZone: NgZone) {}
@@ -63,6 +63,7 @@ export class AppComponent implements DoCheck, AfterViewInit {
       this.ngZone.runOutsideAngular(() => {
         this.percentProgressBar$.pipe(takeUntil(this.fastModeControl.valueChanges)).subscribe(percent => {
           this.performanceProgressBar.nativeElement.style.setProperty('--percent', percent);
+          this.performanceProgressBar.nativeElement.setAttribute('data-percent', `${percent}%`);
         });
       });
     });
