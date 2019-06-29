@@ -1,3 +1,5 @@
+## This example deprecated, see current version on official [NGXS repo](https://github.com/ngxs/ngxs-examples).
+
 # Демонстрация возможностей NgXS (Angular + Redux)
 
 Эту демку я написал специально для тебя, дорогой товарищ front-end разработчик.
