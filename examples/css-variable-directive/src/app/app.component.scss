@@ -20,8 +20,8 @@
   justify-content: center;
 }
 
-.progress-bar::before {
-  content: attr(data-percent);
+.progress-bar::after {
+  content: var(--percentString);
 }
 
 .text {

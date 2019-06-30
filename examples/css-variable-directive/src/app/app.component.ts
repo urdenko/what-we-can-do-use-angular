@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements DoCheck, AfterViewInit {
+export class AppComponent implements DoCheck {
   /**
    * Direct work with host element for better performance
    */
@@ -19,6 +19,8 @@ export class AppComponent implements DoCheck, AfterViewInit {
   private getBack$ = new Subject<number>();
 
   public fastModeControl = new FormControl(false);
+
+  public hurtControl = new FormControl(false);
 
   /**
    * The mock source of progress percent.
@@ -31,6 +33,8 @@ export class AppComponent implements DoCheck, AfterViewInit {
     tap(currentPercent => (this.currentPercent = Number(currentPercent)))
   );
 
+  public percentString$ = this.percentProgressBar$.pipe(map(percent => `"${percent.toFixed(1)}%"`));
+
   constructor(private ngZone: NgZone) {}
 
   /**
@@ -39,10 +43,6 @@ export class AppComponent implements DoCheck, AfterViewInit {
    */
   ngDoCheck(): void {
     console.log('Change detected!');
-  }
-
-  ngAfterViewInit(): void {
-    this.subscribePercentsStreamToPerformanceProgressBar();
   }
 
   /** Drops progress by 20 steps */
@@ -56,20 +56,6 @@ export class AppComponent implements DoCheck, AfterViewInit {
 
     this.ngZone.runOutsideAngular(() => {
       this.getBack$.next(backTo);
-    });
-  }
-
-  /**
-   * Ugly but fast method for pass css variable into element
-   */
-  private subscribePercentsStreamToPerformanceProgressBar(): void {
-    this.fastModeControl.valueChanges.pipe(filter((isFastMode: boolean) => isFastMode)).subscribe(() => {
-      this.ngZone.runOutsideAngular(() => {
-        this.percentProgressBar$.pipe(takeUntil(this.fastModeControl.valueChanges)).subscribe(percent => {
-          this.performanceProgressBar.nativeElement.style.setProperty('--percent', percent);
-          this.performanceProgressBar.nativeElement.setAttribute('data-percent', `${percent.toFixed(1)}%`);
-        });
-      });
     });
   }
 }
